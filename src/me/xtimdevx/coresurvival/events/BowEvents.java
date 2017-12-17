@@ -51,8 +51,8 @@ public class BowEvents implements Listener {
 
         if (SchoolInstructor.playing2.containsKey(arrow.getShooter())) {
             if (arrow instanceof Arrow) {
-                if (TrainingSchool.running2 == true) {
-                    event.setCancelled(true);
+                if (TrainingSchool.running2 != true) {
+                    event.setCancelled(false);
                     return;
                 }
             }
