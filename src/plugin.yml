@@ -1,0 +1,53 @@
+name: CoreSurvival
+version: 0.2
+author: xTimDevx
+main: me.xtimdevx.coresurvival.Main
+
+commands:
+   spawn:
+      usage: /<command>
+      description: Teleport to spawn.
+   setwarp:
+      usage: /<command>
+      description: Set warps to teleport to.
+   warp:
+      usage: /<command>
+      description: Warp to places.
+   quests:
+      usage: /<command>
+      description: Open the quests gui.
+   gamemode:
+      usage: /<command>
+      aliases: [gm]
+      description: Change your gamemode.
+   spawnnpc:
+      usage: /<command>
+      description: Spawn an npc.
+   disablereload:
+      usage: /<command>
+      description: Disable reloading.
+   setop:
+      usage: /<command>
+      description: Set someone as an operator.
+   removeop:
+      usage: /<command>
+      description: remove someone as an operator.
+   setquest:
+      usage: /<command>
+      description: Set the quest of a player.
+   setsidequest:
+      usage: /<command>
+      description: Set the sidequest of a player.
+   coords:
+      usage: /<command>
+      description: Look at the quest coords.
+   kit:
+      usage: /<command>
+      description: Get your kits using this command.
+   afk:
+      usage: /<command>
+      description: Enter AFK Mode.
+   sign:
+      usage: /<command>
+      description: Change the lines of signs.
+

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CoreSurvival:jar">
+    <output-path>$USER_HOME$/Desktop/1.12 Server/plugins</output-path>
+    <root id="archive" name="CoreSurvival.jar">
+      <element id="module-output" name="CoreSurvival" />
+    </root>
+  </artifact>
+</component>
