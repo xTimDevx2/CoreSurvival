@@ -46,13 +46,19 @@ public class JoinEvent implements Listener{
         user.saveFile();
 
         if(user.getQuest() == User.Quest.THE_BEGINNING) {
-            event.setJoinMessage("§8(§a§o+§8) " + PermsUtils.getColor(user.getRank()) + player.getName() + " §8(§c§lNEW§8)");
             player.teleport(new Location(Bukkit.getWorld("Survival"),141.5, 28, 43.5));
             player.sendMessage(" ");
             player.sendMessage(" ");
             player.sendMessage(" ");
             player.sendMessage(" ");
             player.sendMessage(" ");
+            player.sendMessage(" ");
+            player.sendMessage(" ");
+            player.sendMessage(" ");
+            player.sendMessage(" ");
+            player.sendMessage(" ");
+            player.sendMessage(" ");
+            event.setJoinMessage("§8(§a§o+§8) " + PermsUtils.getColor(user.getRank()) + player.getName() + " §8(§c§lNEW§8)");
             player.sendMessage("§8(§5§oQuest§8) §fWelcome, before you can start you should follow this path and talk to John");
         }else {
             event.setJoinMessage("§8(§a§o+§8) " + PermsUtils.getColor(user.getRank()) + player.getName());
