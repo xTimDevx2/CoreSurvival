@@ -39,12 +39,22 @@ public class BowEvents implements Listener {
                     Bukkit.getWorld("Survival").getBlockAt(entityArrow.getLocation()).setType(Material.AIR);
                     Player shooter = (Player) arrow.getShooter();
                     TrainingSchool.ammount--;
-                    shooter.sendMessage(PrefixUtils.OP + "Targets left: §c" + TrainingSchool.ammount);
+                    for (Player player : Bukkit.getOnlinePlayers()) {
+                        if (SchoolInstructor.playing2.containsKey(player)) {
+                            player.sendMessage(PrefixUtils.OP + "Zombies remaining: §c" + TrainingSchool.ammount + "§f.");
+                        }
+                    }
+                    if (TrainingSchool.ammount == 0) {
+                        for (Player player : Bukkit.getOnlinePlayers()) {
+                            if (SchoolInstructor.playing2.containsKey(player)) {
+                                player.sendMessage(PrefixUtils.OP + "You finished the shooting range.");
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-
     @EventHandler
     public void bowShoot(ProjectileLaunchEvent event) {
         Projectile arrow = event.getEntity();

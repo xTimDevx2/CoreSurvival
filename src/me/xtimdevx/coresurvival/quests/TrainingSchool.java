@@ -576,6 +576,54 @@ public class TrainingSchool implements Listener{
         };
         SecondRunnable.runTaskLater(Main.plugin, 210L);
     }
+    public static void endFieldTwo(final Player playing) {
+        SecondRunnable = new BukkitRunnable() {
+            @Override
+            public void run() {
+                playing.sendMessage("§8[§c§o1§8/§c§o3§8] §cVito §8» §fFinally finished? Okay that was it then!");
+                round4 = false;
+            }
+        };
+        SecondRunnable.runTaskLater(Main.plugin, 0L);
+        SecondRunnable = new BukkitRunnable() {
+            @Override
+            public void run() {
+                playing.sendMessage("§8[§c§o2§8/§c§o3§8] §cVito §8» §fYou finished the archery training!");
+            }
+        };
+        SecondRunnable.runTaskLater(Main.plugin, 70L);
+        SecondRunnable = new BukkitRunnable() {
+            @Override
+            public void run() {
+                playing.sendMessage("§8[§c§o3§8/§c§o3§8] §cVito §8» §fAnd thereby you finished the first grade of training school!");
+                Bukkit.getWorld("Survival").getBlockAt(386, 64, 176).setType(Material.AIR);
+                Bukkit.getWorld("Survival").getBlockAt(386, 65, 176).setType(Material.AIR);
+            }
+        };
+        SecondRunnable.runTaskLater(Main.plugin, 140L);
+        SecondRunnable = new BukkitRunnable() {
+            @Override
+            public void run() {
+                playing.sendMessage("§8[§c§o3§8/§c§o3§8] §cVito §8» §fPlease walk trough the last gate and come to the caffetaria. Come talk to me when your there!");
+            }
+        };
+        SecondRunnable.runTaskLater(Main.plugin, 210L);
+        SecondRunnable = new BukkitRunnable() {
+            @Override
+            public void run() {
+                playing.sendTitle("§5§lTRAINING", "§fPlease walk through the gate.");
+            }
+        };
+        SecondRunnable.runTaskLater(Main.plugin, 280L);
+        SecondRunnable = new BukkitRunnable() {
+            @Override
+            public void run() {
+                playing.sendTitle("§5§lTRAINING", "§fTeleporting you into the next field.");
+                teleportOut2();
+            }
+        };
+        SecondRunnable.runTaskLater(Main.plugin, 340L);
+    }
     public static void endFieldOne(final Player playing) {
         SecondRunnable = new BukkitRunnable() {
             @Override
@@ -639,6 +687,17 @@ public class TrainingSchool implements Listener{
                 } else {
                     return;
                 }
+            }
+        }
+    }
+    public static void teleportOut2() {
+        for(Player online : Bukkit.getOnlinePlayers()) {
+            if(SchoolInstructor.playing2.containsKey(online)) {
+                SchoolInstructor.playing2.remove(online);
+                Location location = new Location(Bukkit.getWorld("Survival"), 386.5, 64, 178.5);
+                location.setPitch(0);
+                location.setYaw(-50);
+                online.teleport(location);
             }
         }
     }
